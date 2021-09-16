@@ -25,7 +25,7 @@ exports.cada_conteudo = (req,res)=>{
 
 //post
 exports.adicionar_conteudo = (req,res)=>{
-    novo_conteudo = new conteudo(req.body)
+    var novo_conteudo = new conteudo(req.body)
     novo_conteudo.save(function(erro,conteudo){
         if(erro){
             res.send(erro)
