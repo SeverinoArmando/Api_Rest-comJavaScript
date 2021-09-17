@@ -15,14 +15,14 @@ exports.todos_conteudos = function(req,res){
 //get do id
 
 exports.cada_conteudo = (req,res)=>{
-    conteudo.find({"_id":req.params.conteudoId},(erro,conteudo)=>{
+    conteudo.findOne({"_id":req.params.conteudoId},(erro,conteudo)=>{
         if(erro){
             res.send(erro)
         }
         res.json(conteudo)
     })
 }
-
+   
 //post
 exports.adicionar_conteudo = (req,res)=>{
     var novo_conteudo = new conteudo(req.body)
